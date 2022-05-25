@@ -1,12 +1,16 @@
 pipeline {
-    agent none
+    agent
+
+    environment {
+        DATE = "${sh(script: 'DATE', returnStdout: true).trim()}"
+    }
 
     stages {
         stage('Source') {
             steps {
                 script {
                     echo 'Stage 1: Source'
-                    echo "BUILD NUMBER = ${env.BUILD_NUMBER}"
+                    echo "DATE = ${env.DATE}"
              }
                 
             }
