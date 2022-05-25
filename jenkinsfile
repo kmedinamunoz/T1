@@ -6,8 +6,7 @@ pipeline {
             steps {
                 script {
                     echo 'Stage 1: Source'
-                    fecha = 'Date'
-                    echo 'fecha'
+                    sh 'printenv | sort'
              }
                 
             }
