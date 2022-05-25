@@ -5,11 +5,8 @@ pipeline {
         stage('Source') {
             steps {
                 script {
-                  GIT_COMMIT_REV = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
-                  GIT_URL = sh(returnStdout: true, script: 'git config remote.origin.url').trim()
-                  sh "mvn -Dmaven.test.failure.ignore=true clean package"
-                  echo 'Stage 1..'
-                  TimeStamp
+                    echo 'Stage 1..'
+                    TimeStamp
              }
                 
             }
