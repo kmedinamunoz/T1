@@ -1,5 +1,5 @@
 pipeline {
-    agent
+    agent any
 
     // environment {
     //     DATE = "${sh(script: 'DATE', returnStdout: true).trim()}"
