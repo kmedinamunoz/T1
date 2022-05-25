@@ -6,8 +6,8 @@ pipeline {
             steps {
                 script {
                     echo 'Stage 1: Source'
-                    echo "BUILD_NUMBER = ${env.BUILD_NUMBER}"
-                    
+                    echo "BUILD NUMBER = ${env.BUILD_NUMBER}"
+
              }
                 
             }
