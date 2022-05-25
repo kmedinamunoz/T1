@@ -1,12 +1,12 @@
 pipeline {
-    agent any
+    agent { docker { image 'node:16.13.1-alpine' } }
 
     stages {
         stage('Source') {
             steps {
                 script {
                     echo 'Stage 1: Source'
-                    sh 'make'
+                    sh 'node --version'
              }
                 
             }
