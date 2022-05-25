@@ -4,8 +4,14 @@ pipeline {
     stages {
         stage('Source') {
             steps {
+                script {
+                  GIT_COMMIT_REV = sh(returnStdout: true, script: 'git rev-parse HEAD').trim()
+                  GIT_URL = sh(returnStdout: true, script: 'git config remote.origin.url').trim()
+                  sh "mvn -Dmaven.test.failure.ignore=true clean package"
+             }
                 echo 'Stage 1..'
-                echo "TimeStamp: ${Util.getTimeSpanString(System.currentTimeMillis())}"
+                echo "TimeStamp: ${currentBuild.startTimeInMillis())}"
+                sh 'ls "$JENKINS_HOME/jobs/$JOB_NAME/builds/$BUILD_NUMBER/archive"'
             }
         }
         stage('Test') {
