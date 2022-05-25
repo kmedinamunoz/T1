@@ -1,15 +1,15 @@
 pipeline {
-    agent none
+    agent
 
     stages {
         stage('Source') {
-            script{
+            // script{
                 steps {
                     echo "Stage: ${env.STAGE_NAME}"
                     echo "Build Number: ${env.BUILD_DISPLAY_NAME}"
                     echo "Jenkins Build URL: ${env.BUILD_URL}"
                 }
-            } 
+            // } 
         }
         stage('Test') {
             steps {
