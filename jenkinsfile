@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     echo 'Stage 1: Source'
-                    sh 'echo "$Date"'
+                    sh 'echo "Date"'
              }
                 
             }
