@@ -1,16 +1,16 @@
 pipeline {
     agent
 
-    environment {
-        DATE = "${sh(script: 'DATE', returnStdout: true).trim()}"
-    }
+    // environment {
+    //     DATE = "${sh(script: 'DATE', returnStdout: true).trim()}"
+    // }
 
     stages {
         stage('Source') {
             steps {
                 script {
                     echo 'Stage 1: Source'
-                    echo "DATE = ${env.DATE}"
+                    sh "printenv | sort"
              }
                 
             }
