@@ -5,21 +5,19 @@ pipeline {
         stage('Source') {
             steps {
                 script {
-                    echo 'Stage 1..'
-                    TimeStamp
+                    echo 'Stage 1: Source'
              }
                 
             }
         }
         stage('Test') {
             steps {
-                echo 'Staging 2..'
-                sh 'ls "$JENKINS_HOME/jobs/$JOB_NAME/builds/$BUILD_NUMBER/archive"'
+                echo 'Stage 2: Test'
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Staging 3....'
+                echo 'Stage 3: Deploy'
                 retry(3) {
                     sh './flakey-deploy.sh'
                 }
