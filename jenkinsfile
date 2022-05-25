@@ -1,12 +1,13 @@
 pipeline {
-    agent { docker { image 'node:16.13.1-alpine' } }
+    agent none
 
     stages {
         stage('Source') {
             steps {
                 script {
                     echo 'Stage 1: Source'
-                    sh 'node --version'
+                    fecha = 'Date'
+                    echo 'fecha'
              }
                 
             }
