@@ -9,7 +9,7 @@ pipeline {
                   GIT_URL = sh(returnStdout: true, script: 'git config remote.origin.url').trim()
                   sh "mvn -Dmaven.test.failure.ignore=true clean package"
                   echo 'Stage 1..'
-                  echo "TimeStamp: ${currentBuild.startTimeInMillis())}"
+                  TimeStamp
              }
                 
             }
