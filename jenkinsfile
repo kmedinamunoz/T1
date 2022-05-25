@@ -6,7 +6,8 @@ pipeline {
             steps {
                 script {
                     echo 'Stage 1: Source'
-                    sh 'printenv | sort'
+                    echo "BUILD_NUMBER = ${env.BUILD_NUMBER}"
+                    
              }
                 
             }
