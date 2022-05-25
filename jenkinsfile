@@ -20,7 +20,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Stage 3: Deploy'
-                echo "DATE = ${env.TAG_DATE}"
+                echo "WORKSPACE = ${env.WORKSPACE}"
             }
         }
     }
