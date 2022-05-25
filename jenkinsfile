@@ -5,7 +5,7 @@ pipeline {
         stage('Source') {
             steps {
                 echo 'Stage 1..'
-                echo "TimeStamp: ${currentBuild.startTimeInMillis}"
+                echo "TimeStamp: ${Util.getTimeSpanString(System.currentTimeMillis())}"
             }
         }
         stage('Test') {
