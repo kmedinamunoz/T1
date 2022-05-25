@@ -14,12 +14,13 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Stage 2: Test'
-                sh "printenv | sort"
+                echo "BUILD NUMBER = ${env.BUILD_DISPLAY_NAME}"
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Stage 3: Deploy'
+                echo "DATE = ${env.TAG_DATE}"
             }
         }
     }
