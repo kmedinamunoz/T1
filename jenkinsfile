@@ -4,9 +4,12 @@ pipeline {
     stages {
         stage('Source') {
             steps {
-                echo "Stage: ${env.STAGE_NAME}"
-                echo "Build Number: ${env.BUILD_DISPLAY_NAME}"
-                echo "Jenkins Build URL: ${env.BUILD_URL}"
+                script {
+                    echo "Stage: ${env.STAGE_NAME}"
+                    echo "Build Number: ${env.BUILD_DISPLAY_NAME}"
+                    echo "Jenkins Build URL: ${env.BUILD_URL}"
+                }
+                
             }
         }
         stage('Test') {
