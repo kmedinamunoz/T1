@@ -14,7 +14,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo "Stage: ${env.STAGE_NAME}"
-                echo "Find the Jenkinsfile from Git ${env.GIT_URL}. Branch ${env.GIT_BRANCH}"
+                echo "Find the Jenkinsfile from Git ${env.GIT_URL}.
+                Branch ${env.GIT_BRANCH}"
             }
         }
         stage('Deploy') {
