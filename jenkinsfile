@@ -1,22 +1,18 @@
 pipeline {
-    agent none
+    agent any
 
     stages {
         stage('Source') {
             steps {
-                script {
-                    echo "Stage: ${env.STAGE_NAME}"
-                    echo "Build Number: ${env.BUILD_DISPLAY_NAME}"
-                    echo "Jenkins Build URL: ${env.BUILD_URL}"
-                }
+                echo "Stage: ${env.STAGE_NAME}"
+                echo "Build Number: ${env.BUILD_DISPLAY_NAME}"
+                echo "Jenkins Build URL: ${env.BUILD_URL}"
             }
         }
         stage('Test') {
             steps {
-                script {
-                    echo "Stage: ${env.STAGE_NAME}"
-                    echo "Find the Jenkinsfile from Git ${env.GIT_URL} (Branch ${env.GIT_BRANCH})"
-                }
+                echo "Stage: ${env.STAGE_NAME}"
+                echo "Find the Jenkinsfile from Git ${env.GIT_URL} (Branch ${env.GIT_BRANCH})"
             }
         }
         stage('Deploy') {
