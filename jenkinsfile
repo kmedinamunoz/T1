@@ -1,30 +1,27 @@
 pipeline {
     agent any
 
-    // environment {
-    //     DATE = "${sh(script: 'DATE', returnStdout: true).trim()}"
-    // }
-
     stages {
         stage('Source') {
             steps {
                 script {
                     echo 'Stage 1: Source'
-                    sh "printenv | sort"
-             }
-                
+                    echo "BUILD NUMBER = ${env.BUILD_DISPLAY_NAME}"
+                    echo "BUILD URL = ${env.BUILD_URL}"
+             } 
             }
         }
         stage('Test') {
             steps {
                 echo 'Stage 2: Test'
-                echo "BUILD NUMBER = ${env.BUILD_DISPLAY_NAME}"
+                echo "GIT BRANCH NAME = ${env.GIT_BRANCH}"
+                echo "GIT URL = ${env.GIT_URL}"
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Stage 3: Deploy'
-                echo "WORKSPACE = ${env.WORKSPACE}"
+                echo "JENKINS VERSION = ${env.JENKINS_VERSION}"
             }
         }
     }
