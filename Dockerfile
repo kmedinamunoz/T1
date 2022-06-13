@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM jenkins/jenkins:lts-jdk11
 
 USER root
 
